@@ -13,3 +13,7 @@ Submission for CS1660 Project1
   - Orange - password is "orange"
   - Hadoop - in the xterm window navigate to 'cd $HADOOP_PREFIX' then run 'bin/hadoop'
   - Spyder - run 'spyder3' in the xterm window
+
+## Links
+  - [Demonstration](https://youtu.be/GwQNxtpPAAE)
+  - [Code Walkthrough](https://youtu.be/tNRs-vY_Kvs)
