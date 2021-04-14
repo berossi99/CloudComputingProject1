@@ -1,5 +1,6 @@
 # Cloud Computing Project1
 Submission for CS1660 Project1
+Reccomended OS: macOS
 
 ## Setup
   - Replace <IPADDRESS> with your IP in the Dockerfile in the root directory and in the Spyder section of docker-compose
