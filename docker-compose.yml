@@ -1,0 +1,81 @@
+services:
+     web:
+        build: .
+        ports:
+            - "5000:5000"
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+        container_name: "Flask_App"
+
+     Rstudio:
+        image: "rocker/verse"
+        environment:
+            - PASSWORD=rstudio1
+        ports:
+            - "8787:8787"
+        expose:
+            - "8787"
+     Jupyter:
+        image: "jupyter/scipy-notebook"
+        ports:
+            - "8888:8888"
+        expose:
+            - "8888"
+     VSCode:
+        image: "codercom/code-server:latest"
+        volumes:
+            - ./VSCode:/home/coder/.config/code-server
+        ports:
+            - "8080:8080"
+        expose:
+            - "8080"
+        container_name: "VSCode_Container"
+
+     git:
+        build: ./git
+        container_name: "Git_Container"
+        command: tail -F anything 
+     
+     Hadoop:
+        image: "sequenceiq/hadoop-docker:2.7.0"
+        container_name: "Hadoop_Container"
+        command: tail -F anything 
+
+     Tensorflow:
+        image: tensorflow/tensorflow
+        container_name: "Tensorflow_Container"
+        command: tail -F anything 
+
+     markdown:
+        build: ./markdown
+        container_name: "Markdown_Container"
+        command: tail -F anything 
+
+     Spyder:
+        image: "compdatasci/spyder-desktop"
+        container_name: "Spyder_Container"
+        environment:
+            - DISPLAY=<IPADDRESS>:0
+        ports:
+            - "5900:5900"
+            - "6080:6080"
+        expose:
+            - "5900"
+            - "6080"
+
+     Spark:
+        image: "coorpacademy/docker-pyspark:latest"
+        container_name: "Spark_Container"
+
+     Orange:
+        image: "acopar/orange-docker"
+        container_name: "Orange_Container"
+        ports:
+            - "5901:5901"
+            - "6901:6901"
+        expose:
+            - "5901"
+            - "6901"
+
+
+     
